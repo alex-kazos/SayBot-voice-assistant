@@ -207,6 +207,7 @@ if __name__ == '__main__':
 	# command before execution of this python file
 	clear()
 	greetings()
+	
 	# setting up chatbot
 	sayBot = ChatBot(system_prompt="You are Say Bot, a helpful AI Assistant that only answers if its 100% certaint")
 		
@@ -232,9 +233,9 @@ if __name__ == '__main__':
 			pywhatkit.playonyt(song)
 
 		elif 'the time' in query:
-			strTime = datetime.datetime.now().strftime("% H:% M:% S")
-			print(f"The time is: {strTime}")
-			speak(f"The time is: {strTime}")
+			strTime = datetime.datetime.now().strftime("%I:%M:%S %p")
+			print(f"The time is {strTime}")
+			speak(f"The time is {strTime}")
 			
 		elif 'joke' in query:
 			joke=pyjokes.get_joke()
@@ -347,7 +348,7 @@ if __name__ == '__main__':
 			print("Smile for the camera!")
 			speak("Smile for the camera!")
 			Image_id =randomNumber(numb=5)
-			ec.capture(0, "sayBot_",Image_id ,"img.jpg")
+			ec.capture(0, f"sayBot_{Image_id}" ,"img.jpg")
 			
 
 		elif "write a note" in query:
@@ -433,6 +434,9 @@ if __name__ == '__main__':
 			Image_id =randomNumber(numb=5)
 			save_image(image_response_url,f'sayBot_GenerativeImage_{Image_id}.png')
 
+			print('Image saved Successfully')
+			speak('Image saved Successfully')
+
 		elif "exit" in query or "bye" in query:
 			print('Goodbye!')
 			speak("Goodbye!")
@@ -457,7 +461,8 @@ if __name__ == '__main__':
 				pywhatkit.playonyt(song)
 
 			elif 'the time' in query:
-				strTime = datetime.datetime.now().strftime("% H:% M:% S")
+				strTime = datetime.datetime.now().strftime("%I:%M:%S %p")
+				print(f"The time is {strTime}")
 				speak(f"The time is {strTime}")
 			
 			elif 'joke' in query:
@@ -566,7 +571,7 @@ if __name__ == '__main__':
 				print("Smile for the camera!")
 				speak("Smile for the camera!")
 				Image_id =randomNumber(numb=5)
-				ec.capture(0, "sayBot_",Image_id ,"img.jpg")
+				ec.capture(0, f"sayBot_{Image_id}" ,"img.jpg")
 				
 
 			elif "write a note" in query:
@@ -608,17 +613,24 @@ if __name__ == '__main__':
 					feels_like = data["current"]["feelslike_c"]
 					
 					
-					print("Time: {}".format(time))
-					print("Location: {}, {}".format(location, country))
-					print("Current temperature is: {}°C".format(current_temperature))
-					print("Condition: {}".format(condition))
-					print("Wind Speed: {} kph, Wind Direction: {}".format(wind_speed, wind_dir))
-					print("Feels Like: {}°C".format(feels_like))
+					print(f"Time: {time}")
+					print(f"Location: {location}, {country}")
+					print(f"Current temperature is: {current_temperature}°C")
+					print(f"Condition: {condition}")
+					print(f"Wind Speed: {wind_speed} kph, Wind Direction: {wind_dir}")
+					print(f"Feels Like: {feels_like}°C")
+
+					speak(f"Time: {time}")
+					speak(f"Location: {location}, {country}")
+					speak(f"Current temperature is: {current_temperature}°C")
+					speak(f"Condition: {condition}")
+					speak(f"Wind Speed: {wind_speed} kph, Wind Direction: {wind_dir}")
+					speak(f"Feels Like: {feels_like}°C")
 				else:
+					speak("Failed to get weather data")
 					print("Failed to get weather data")
 
 			elif 'create' in query or 'paint' in query or 'image' in query:
-				print(query)
 				prompt = query 
 				print('What resolution do you want?')
 				print('Low, Medium or High?')
@@ -642,8 +654,11 @@ if __name__ == '__main__':
 
 				Image_id =randomNumber(numb=5)
 				save_image(image_response_url,f'sayBot_GenerativeImage_{Image_id}.png')
+				print('Image saved Successfully')
+				speak('Image saved Successfully')
 
 
 
 
+        
         
