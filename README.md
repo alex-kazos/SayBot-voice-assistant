@@ -2,6 +2,8 @@
 
 SayBot is an AI virtual voice assistant that can perform various tasks like opening websites, playing music, telling time, jokes, news, weather, navigation, writing and reading notes, and much more. It can also perform some device-related tasks like locking, shutting down, restarting, and taking photos.
 
+*wake-up feature will be added*
+
 ## Requirements
 In order to run the SayBot virtual assistant, you will need to have the following libraries installed:
 
