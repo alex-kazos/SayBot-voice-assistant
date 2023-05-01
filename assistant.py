@@ -428,7 +428,7 @@ if __name__ == '__main__':
 			art_style = takeCommand().lower()
 			Image_response = openai.Image.create(prompt=f'Generate an image of : {prompt},{art_style}',
                                      n=1,
-                                     size='512x512')
+                                     size=size)
 			image_response_url = Image_response['data'][0]['url']
 
 			Image_id =randomNumber(numb=5)
@@ -649,7 +649,7 @@ if __name__ == '__main__':
 				art_style = takeCommand().lower()
 				Image_response = openai.Image.create(prompt=f'Generate an image of : {prompt},{art_style}',
 										n=1,
-										size='512x512')
+										size=size)
 				image_response_url = Image_response['data'][0]['url']
 
 				Image_id =randomNumber(numb=5)
