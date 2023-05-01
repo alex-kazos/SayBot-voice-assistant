@@ -69,7 +69,7 @@ You can give any of the above commands to SayBot by speaking into your microphon
 SayBot also includes a DALL-E model that can generate an image from a voice command. To generate an image, simply say "generate an image". SayBot will prompt you for a description of the image you want to generate, and will generate an image based on your description.
 
 i.e.
-*create an image of leonardo DiCpario ridding a Horse, digital art
+*create an image of leonardo DiCpario ridding a Horse, digital art*
 
 ![Alt Text](https://github.com/Alexkazos/SayBot-voice-assistant/blob/main/sayBot_GenerativeImage_94758.png)
 
