@@ -7,7 +7,7 @@ tkinter
 json
 random
 operator
-speech_recognition
+SpeechRecognition
 datetime
 webbrowser
 os
