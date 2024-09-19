@@ -45,7 +45,7 @@ class SayBotOverlay:
         # Initialize text-to-speech engine
         self.engine = pyttsx3.init()
         voices = self.engine.getProperty('voices')
-        self.engine.setProperty('voice', voices[1].id)
+        self.engine.setProperty('voice', voices[0].id)  # Changed to index 0 for a different voice
 
         # Initialize speech recognition
         self.recognizer = sr.Recognizer()
